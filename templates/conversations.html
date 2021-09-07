@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+<a href="{% url 'index' %}"><button class="btn btn-primary">Back to homepage</button></a>
+
+<div class="container pt-3">
+<div class="row">
+{% block content %}
+    {% for conversation in conversations %}
+   <div class="col-md-4 border border-dark">
+   <p>
+        Conversation ID: {{ conversation.conversation_id }}
+        <br>
+        Intercom Teammate: {{ conversation.teammate_name }}
+        <br>
+        Customer Email: {{ conversation.intercom_user_email }}
+        <br>
+        Created at: {{ conversation.conversation_created_at }}
+        <br>
+        Last closed at: {{ conversation.conversation_closed_at }}
+        <br>
+        Conversation impacted sale: {{ conversation.conversation_impacted_sale }}
+   </p>
+   </div>
+    {% endfor %}
+{% endblock %}
+        </div>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2021 Intercom Tips</p>
+  </footer>
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

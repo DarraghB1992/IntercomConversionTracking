@@ -1,0 +1,12 @@
+db.sqlite3
+.idea/
+*.pyc
+blogEnv/*
+.vscode/
+venv/
+debug.log
+ngrok
+.DS_Store
+
+
+

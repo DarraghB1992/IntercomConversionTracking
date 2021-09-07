@@ -1,0 +1,24 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+
+<h1>Thanks for your purchase {{ first_name }} {{ last_name }}! 🙌 </h1>
+
+<h3>A confirmation email has been sent to {{ email }} with your order details. 😃</h3>
+<br>
+
+<a href="{% url 'index' %}"><button class="btn btn-primary">Back to start</button></a>
+<a href="{% url 'show_conversations' %}"><button class="btn btn-primary">List all conversations in database</button></a>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2021 Intercom Tips</p>
+  </footer>
+</body>
+</html>
