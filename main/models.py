@@ -9,13 +9,14 @@ class Conversation(models.Model):
 
     intercom_user_id = models.CharField(max_length=50)
     intercom_user_name = models.CharField(max_length=50)
-    intercom_user_email = models.EmailField()
+    intercom_user_email = models.EmailField(default=None)
 
     teammate_id = models.CharField(max_length=50)
     teammate_name = models.CharField(max_length=50)
-    teammate_email = models.EmailField()
+    teammate_email = models.EmailField(default=None)
 
     conversation_impacted_sale = models.BooleanField(default=False)
+
     def __str__(self):
-        return str(self.conversation_id)
+        return str(self.intercom_user_email)
 

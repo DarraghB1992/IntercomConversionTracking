@@ -14,7 +14,6 @@ def index(request):
 
 def submit_checkout(request):
     if request.method == 'POST':
-        print(request.POST)
         email = request.POST['email']
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
